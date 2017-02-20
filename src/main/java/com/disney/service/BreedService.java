@@ -21,6 +21,11 @@ public class BreedService implements IBreedService {
         DataLoader.getInstance();
     }
 
+    /**
+     * List all Dog info group by breeds
+     *
+     * @return
+     */
     @Override
     public List<Breed> listAllDogsByAllBreeds() {
         if(breedsMap != null && breedsMap.size()>0)
@@ -28,6 +33,12 @@ public class BreedService implements IBreedService {
         return null;
     }
 
+    /**
+     * List all Dogs info for a specific breed
+     *
+     * @param breedName
+     * @return
+     */
     @Override
     public List<Dog> listDogsForBreed(String breedName) {
         if(breedsMap != null && breedsMap.size()>0){

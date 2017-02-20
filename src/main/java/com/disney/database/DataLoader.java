@@ -39,7 +39,7 @@ public class DataLoader {
     }
 
     /**
-     * Load dogs and create breadMap
+     * Load dogs and initialize breadMap and dogMap
      * @param breed
      * @param file
      * @throws IOException

@@ -19,6 +19,13 @@ public class DogService implements IDogService{
         DataLoader.getInstance();
     }
 
+    /**
+     * Find a Dog info by given dogPic name such as "oSieVUO.png"
+     * The dogPic is the name after .com/ from url
+     *
+     * @param dogPicUrl the name after .com/ from url
+     * @return
+     */
     @Override
     public Dog findDogByPic(String dogPicUrl) {
         if(dogsMap != null && dogsMap.containsKey(dogPicUrl)){
@@ -27,6 +34,12 @@ public class DogService implements IDogService{
         return null;
     }
 
+    /**
+     * Increase up vote for the dog pic name
+     *
+     * @param dogPicUrl the name after .com/ from url
+     * @return
+     */
     @Override
     public Dog updateUpVoteDog(String dogPicUrl){
         Dog dog;
@@ -39,6 +52,12 @@ public class DogService implements IDogService{
         return null;
     }
 
+    /**
+     * Increase down vote for the dog pic name
+     *
+     * @param dogPicUrl the name after .com/ from url
+     * @return
+     */
     @Override
     public Dog updateDownVoteDog(String dogPicUrl){
         Dog dog;
