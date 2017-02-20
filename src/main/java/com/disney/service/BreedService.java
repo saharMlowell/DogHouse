@@ -39,21 +39,4 @@ public class BreedService implements IBreedService {
         }
         return null;
     }
-
-    @Override
-    public Breed addBreed(Breed breed){
-        breedsMap.put(breed.getBreedName(), breed);
-        return breed;
-    }
-
-    @Override
-    public Breed updateBreed(Breed breed){
-        breedsMap.put(breed.getBreedName(), breed);
-        return breed;
-    }
-
-    @Override
-    public Breed removeBreed(String breedName){
-        return breedsMap.remove(breedName);
-    }
 }

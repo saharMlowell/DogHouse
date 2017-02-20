@@ -10,7 +10,4 @@ import java.util.List;
 public interface IBreedService {
     List<Breed> listAllDogsByAllBreeds();
     List<Dog> listDogsForBreed(String breedName);
-    Breed addBreed(Breed breed);
-    Breed updateBreed(Breed breed);
-    Breed removeBreed(String breedName);
 }
