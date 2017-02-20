@@ -16,10 +16,9 @@ import java.util.Map;
 @Service
 public class BreedService implements IBreedService {
     private Map<String, Breed> breedsMap = DatabaseClass.getBreedsMap();
-    private DataLoader dataLoader;
 
-    public BreedService() throws Exception {
-        dataLoader = new DataLoader();
+    public BreedService(){
+        DataLoader.getInstance();
     }
 
     @Override

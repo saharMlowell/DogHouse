@@ -1,5 +1,6 @@
 package com.disney.service;
 
+import com.disney.database.DataLoader;
 import com.disney.database.DatabaseClass;
 import com.disney.model.Breed;
 import com.disney.model.Dog;
@@ -13,6 +14,10 @@ import java.util.Map;
 @Service
 public class DogService implements IDogService{
     private Map<String, Dog> dogsMap = DatabaseClass.getDogMap();
+
+    public DogService() {
+        DataLoader.getInstance();
+    }
 
     @Override
     public Dog findDogByPic(String dogPicUrl) {

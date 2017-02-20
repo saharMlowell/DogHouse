@@ -21,11 +21,21 @@ public class DataLoader {
     private Map<String, Breed> breedsMap = DatabaseClass.getBreedsMap();
     private Map<String, Dog> dogMap = DatabaseClass.getDogMap();
 
-    public DataLoader()throws IOException {
-        loadBreed("labradors", new File(String.valueOf(getClass().getResource("/data/labrador.txt").getFile())));
-        loadBreed("pug", new File(String.valueOf(getClass().getResource("/data/pug.txt").getFile())));
-        loadBreed("retriever", new File(String.valueOf(getClass().getResource("/data/retriever.txt").getFile())));
-        loadBreed("yorkie", new File(String.valueOf(getClass().getResource("/data/yorkie.txt").getFile())));
+    private static final DataLoader instance = new DataLoader();
+
+    public static DataLoader getInstance() {
+        return instance;
+    }
+
+    private DataLoader() {
+        try {
+            loadBreed("labradors", new File(String.valueOf(getClass().getResource("/data/labrador.txt").getFile())));
+            loadBreed("pug", new File(String.valueOf(getClass().getResource("/data/pug.txt").getFile())));
+            loadBreed("retriever", new File(String.valueOf(getClass().getResource("/data/retriever.txt").getFile())));
+            loadBreed("yorkie", new File(String.valueOf(getClass().getResource("/data/yorkie.txt").getFile())));
+        }catch (IOException e){
+
+        }
     }
 
     /**
